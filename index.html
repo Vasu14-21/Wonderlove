@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wanderlust - Your Travel Guide</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <h2>Wanderlust</h2>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="#home" class="nav-link">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#destinations" class="nav-link">Destinations</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#about" class="nav-link">About</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#contact" class="nav-link">Contact</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link cart-toggle">Cart (<span id="cart-count">0</span>)</a>
+                </li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1 class="hero-title">Discover Amazing Places</h1>
+            <p class="hero-subtitle">Explore the world's most beautiful destinations with our curated travel guides</p>
+            <button class="cta-button">Start Exploring</button>
+        </div>
+        <div class="hero-image">
+            <img src="https://images.pexels.com/photos/1591373/pexels-photo-1591373.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Beautiful landscape">
+        </div>
+    </section>
+
+    <!-- Destinations Section -->
+    <section id="destinations" class="destinations">
+        <div class="container">
+            <h2 class="section-title">Popular Destinations</h2>
+            <p class="section-subtitle">Discover breathtaking places around the world</p>
+            
+            <div class="destinations-grid">
+                <div class="destination-card">
+                    <div class="card-image">
+                        <img src="https://images.pexels.com/photos/161901/paris-sunset-france-monument-161901.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Paris">
+                        <div class="card-overlay">
+                            <button class="explore-btn add-to-cart" data-destination="Paris, France" data-price="1200" data-duration="7 days">Add to Cart</button>
+                        </div>
+                    </div>
+                    <div class="card-content">
+                        <h3>Paris, France</h3>
+                        <p>The City of Light awaits with its iconic landmarks, world-class museums, and romantic atmosphere.</p>
+                        <div class="card-footer">
+                            <span class="price">From $1,200</span>
+                            <span class="duration">7 days</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="destination-card">
+                    <div class="card-image">
+                        <img src="https://images.pexels.com/photos/1010657/pexels-photo-1010657.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Tokyo">
+                        <div class="card-overlay">
+                            <button class="explore-btn add-to-cart" data-destination="Tokyo, Japan" data-price="1500" data-duration="10 days">Add to Cart</button>
+                        </div>
+                    </div>
+                    <div class="card-content">
+                        <h3>Tokyo, Japan</h3>
+                        <p>Experience the perfect blend of traditional culture and cutting-edge technology in Japan's capital.</p>
+                        <div class="card-footer">
+                            <span class="price">From $1,500</span>
+                            <span class="duration">10 days</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="destination-card">
+                    <div class="card-image">
+                        <img src="https://images.pexels.com/photos/1450353/pexels-photo-1450353.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Santorini">
+                        <div class="card-overlay">
+                            <button class="explore-btn add-to-cart" data-destination="Santorini, Greece" data-price="900" data-duration="5 days">Add to Cart</button>
+                        </div>
+                    </div>
+                    <div class="card-content">
+                        <h3>Santorini, Greece</h3>
+                        <p>Stunning sunsets, white-washed buildings, and crystal-clear waters make this island paradise unforgettable.</p>
+                        <div class="card-footer">
+                            <span class="price">From $900</span>
+                            <span class="duration">5 days</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="destination-card">
+                    <div class="card-image">
+                        <img src="https://images.pexels.com/photos/1591056/pexels-photo-1591056.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Bali">
+                        <div class="card-overlay">
+                            <button class="explore-btn add-to-cart" data-destination="Bali, Indonesia" data-price="800" data-duration="8 days">Add to Cart</button>
+                        </div>
+                    </div>
+                    <div class="card-content">
+                        <h3>Bali, Indonesia</h3>
+                        <p>Tropical paradise with lush rice terraces, ancient temples, and pristine beaches.</p>
+                        <div class="card-footer">
+                            <span class="price">From $800</span>
+                            <span class="duration">8 days</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="destination-card">
+                    <div class="card-image">
+                        <img src="https://images.pexels.com/photos/1591447/pexels-photo-1591447.jpeg?auto=compress&cs=tinysrgb&w=800" alt="New York">
+                        <div class="card-overlay">
+                            <button class="explore-btn add-to-cart" data-destination="New York, USA" data-price="1100" data-duration="6 days">Add to Cart</button>
+                        </div>
+                    </div>
+                    <div class="card-content">
+                        <h3>New York, USA</h3>
+                        <p>The city that never sleeps offers endless entertainment, world-class dining, and iconic landmarks.</p>
+                        <div class="card-footer">
+                            <span class="price">From $1,100</span>
+                            <span class="duration">6 days</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="destination-card">
+                    <div class="card-image">
+                        <img src="https://images.pexels.com/photos/1591373/pexels-photo-1591373.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Iceland">
+                        <div class="card-overlay">
+                            <button class="explore-btn add-to-cart" data-destination="Reykjavik, Iceland" data-price="1300" data-duration="9 days">Add to Cart</button>
+                        </div>
+                    </div>
+                    <div class="card-content">
+                        <h3>Reykjavik, Iceland</h3>
+                        <p>Witness the Northern Lights, explore glaciers, and relax in natural hot springs.</p>
+                        <div class="card-footer">
+                            <span class="price">From $1,300</span>
+                            <span class="duration">9 days</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2>About Wanderlust</h2>
+                    <p>We are passionate travel enthusiasts dedicated to helping you discover the world's most incredible destinations. With over 10 years of experience in the travel industry, we curate unique experiences that create lasting memories.</p>
+                    <p>Our expert team has traveled to over 100 countries, bringing you insider knowledge and authentic local experiences that you won't find anywhere else.</p>
+                    <div class="stats">
+                        <div class="stat">
+                            <h3>500+</h3>
+                            <p>Destinations</p>
+                        </div>
+                        <div class="stat">
+                            <h3>10K+</h3>
+                            <p>Happy Travelers</p>
+                        </div>
+                        <div class="stat">
+                            <h3>15+</h3>
+                            <p>Years Experience</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-image">
+                    <img src="https://images.pexels.com/photos/1591382/pexels-photo-1591382.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Travel team">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title">Get In Touch</h2>
+            <p class="section-subtitle">Ready to start your next adventure? Contact us today!</p>
+            
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <h3>📍 Address</h3>
+                        <p>Andhrapradesh<br>Nellore</p>
+                    </div>
+                    <div class="contact-item">
+                        <h3>📞 Phone</h3>
+                        <p>91+ 9553866278</p>
+                    </div>
+                    <div class="contact-item">
+                        <h3>📱 WhatsApp</h3>
+                        <p>+91 95538 66278</p>
+                    </div>
+                </div>
+                
+                <form class="contact-form">
+                    <div class="form-group">
+                        <input type="text" placeholder="Your Name" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" placeholder="Your Email" required>
+                    </div>
+                    <div class="form-group">
+                        <select required>
+                            <option value="">Select Destination</option>
+                            <option value="paris">Paris, France</option>
+                            <option value="tokyo">Tokyo, Japan</option>
+                            <option value="santorini">Santorini, Greece</option>
+                            <option value="bali">Bali, Indonesia</option>
+                            <option value="newyork">New York, USA</option>
+                            <option value="iceland">Reykjavik, Iceland</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <textarea placeholder="Tell us about your dream trip..." rows="5" required></textarea>
+                    </div>
+                    <button type="submit" class="submit-btn">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Wanderlust</h3>
+                    <p>Your gateway to extraordinary adventures around the world.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#destinations">Destinations</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Follow Us</h4>
+                    <div class="social-links">
+                        <a href="#">Facebook</a>
+                        <a href="#">Instagram</a>
+                        <a href="#">Twitter</a>
+                        <a href="#">YouTube</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Wanderlust. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Cart Modal -->
+    <div id="cart-modal" class="cart-modal">
+        <div class="cart-content">
+            <div class="cart-header">
+                <h2>Your Travel Cart</h2>
+                <span class="cart-close">&times;</span>
+            </div>
+            <div class="cart-body">
+                <div id="cart-items"></div>
+                <div class="cart-total">
+                    <h3>Total: $<span id="cart-total">0</span></h3>
+                </div>
+                <div class="cart-actions">
+                    <button id="clear-cart" class="clear-btn">Clear Cart</button>
+                    <button id="proceed-booking" class="booking-btn">Proceed to Booking</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Booking Modal -->
+    <div id="booking-modal" class="booking-modal">
+        <div class="booking-content">
+            <div class="booking-header">
+                <h2>Confirm Your Booking</h2>
+                <span class="booking-close">&times;</span>
+            </div>
+            <div class="booking-body">
+                <form id="booking-form">
+                    <div class="form-group">
+                        <input type="text" id="booking-name" placeholder="Full Name" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" id="booking-email" placeholder="Email Address" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="tel" id="booking-phone" placeholder="Phone Number" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="date" id="booking-date" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="number" id="booking-travelers" placeholder="Number of Travelers" min="1" required>
+                    </div>
+                    <div class="form-group">
+                        <textarea id="booking-notes" placeholder="Special Requirements (Optional)" rows="3"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="payment-method">Payment Method *</label>
+                        <select id="payment-method" required>
+                            <option value="">Select Payment Method</option>
+                            <option value="credit-card">Credit/Debit Card</option>
+                            <option value="paypal">PayPal</option>
+                            <option value="bank-transfer">Bank Transfer</option>
+                            <option value="upi">UPI (PhonePe/GPay/Paytm)</option>
+                            <option value="cash">Cash on Arrival</option>
+                        </select>
+                    </div>
+                    <div id="payment-details" class="payment-details" style="display: none;">
+                        <!-- Payment details will be populated based on selected method -->
+                    </div>
+                    <div class="booking-summary">
+                        <h3>Booking Summary</h3>
+                        <div id="booking-items"></div>
+                        <div class="booking-total">
+                            <strong>Total Amount: $<span id="booking-total">0</span></strong>
+                        </div>
+                    </div>
+                    <button type="submit" class="confirm-booking-btn">Proceed to Payment</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Payment Confirmation Modal -->
+    <div id="payment-modal" class="payment-modal">
+        <div class="payment-content">
+            <div class="payment-header">
+                <h2>Payment Confirmation</h2>
+                <span class="payment-close">&times;</span>
+            </div>
+            <div class="payment-body">
+                <div class="payment-success">
+                    <div class="success-icon">✅</div>
+                    <h3>Booking Confirmed!</h3>
+                    <p>Your booking has been successfully submitted. We will contact you shortly to confirm payment details and finalize your travel arrangements.</p>
+                    
+                    <div class="booking-reference">
+                        <h4>Booking Reference: <span id="booking-ref"></span></h4>
+                    </div>
+                    
+                    <div class="next-steps">
+                        <h4>Next Steps:</h4>
+                        <ul>
+                            <li>You will receive a confirmation call/message within 24 hours</li>
+                            <li>Our team will provide payment instructions based on your selected method</li>
+                            <li>Complete payment to secure your booking</li>
+                            <li>Receive detailed travel itinerary and documents</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="contact-info">
+                        <p><strong>Questions?</strong> Contact us on WhatsApp: +91 95538 66278</p>
+                    </div>
+                </div>
+                
+                <button class="close-payment-btn">Close</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
